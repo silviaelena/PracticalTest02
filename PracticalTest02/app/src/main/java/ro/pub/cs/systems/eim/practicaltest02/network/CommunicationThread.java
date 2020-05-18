@@ -87,13 +87,44 @@ public class CommunicationThread extends Thread {
 
                 currencyInformation = new CurrencyInformation(rate, updateTime);
                 serverThread.setData(currency, currencyInformation);
+
+
+//                JSONObject content = new JSONObject(pageSourceCode);
+//
+//                JSONObject currencyDict = content.getJSONObject(Constants.BPI);
+//                JSONObject curr;
+//                curr = currencyDict.getJSONObject(Constants.USD);
+//                String USD = curr.getString(Constants.RATE);
+//
+//                curr = currencyDict.getJSONObject(Constants.EUR);
+//                String EUR = curr.getString(Constants.RATE);
+//
+//
+//                JSONObject main = content.getJSONObject(Constants.TIME);
+//                String updated = main.getString(Constants.UPDATED);
+//
+//                currencyInformation = new CurrencyInformation(USD, EUR, updated);
+
             }
 
             if (data == null) {
                 Log.e(Constants.TAG, "[COMMUNICATION THREAD] Currency Information is null!");
                 return;
             }
-            String result = currencyInformation.toString();
+
+            String result = null;
+            switch (currency) {
+                case Constants.EUR:
+                    result = currencyInformation.getRateEUR();
+                    break;
+                case Constants.USD:
+                    result = currencyInformation.getRateUSD();
+                    break;
+                default:
+                    result = "[COMMUNICATION THREAD] Wrong information type (EUR / USD)!";
+            }
+
+//            String result = currencyInformation.toString();
 
             printWriter.println(result);
             printWriter.flush();
