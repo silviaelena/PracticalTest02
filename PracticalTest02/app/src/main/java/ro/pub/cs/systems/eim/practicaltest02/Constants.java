@@ -11,4 +11,5 @@ public class Constants {
     final public static String USD = "usd";
     final public static String EUR = "eur";
 
+    final public static String EMPTY_STRING = "";
 }
