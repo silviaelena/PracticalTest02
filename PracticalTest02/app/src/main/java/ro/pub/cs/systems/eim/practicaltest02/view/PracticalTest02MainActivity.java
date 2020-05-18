@@ -23,7 +23,7 @@ public class PracticalTest02MainActivity extends AppCompatActivity {
     // Client widgets
     private EditText clientAddressEditText = null;
     private EditText clientPortEditText = null;
-    private EditText currencyEditText = null;
+//    private EditText currencyEditText = null;
     private Spinner currencyTypeSpinner = null;
     private Button getCurrencyButton = null;
     private TextView currencyTextView = null;
