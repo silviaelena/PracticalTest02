@@ -7,6 +7,7 @@
     <string name="client_address">Client Address</string>
     <string name="client_port">Client Port</string>
     <string name="get_information">Get Currency Info</string>
+    <string name="currency">Currency</string>
     <string-array name="currency_types">
         <item>EUR</item>
         <item>USD</item>
